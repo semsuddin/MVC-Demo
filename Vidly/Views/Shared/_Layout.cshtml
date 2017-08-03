@@ -1,5 +1,5 @@
 ﻿@using Vidly.Models
-@model Vidly.ViewModels.RandomMovieViewModel
+@*@model Vidly.ViewModels.RandomMovieViewModel*@
 
 
 <!DOCTYPE html>
@@ -15,18 +15,20 @@
 <body>
 
 @*passing model as second argument to partial views*@
-@Html.Partial("_NavBar", Model.Movie);
-    
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+@*@Html.Partial("_NavBar", Model.Movie);*@
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-</body>
-</html>
+@Html.Partial("_NavBar");
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>
